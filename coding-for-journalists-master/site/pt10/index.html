@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Text encoding and debugging - Coding for Journalists</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Text encoding and debugging";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Coding for Journalists</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Main</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../install/">Setting up your computer</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt1/">Introduction</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt2/">Scraping the web</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt3/">Parsing text across lines</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt4/">Making a function</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt5/">Geocoding addresses</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt6/">APIs and databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt7/">Unlocking data from databases</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt8/">Cleaning data</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pt9/">Other scrapes</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Text encoding and debugging</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#encoding-and-debugging">Encoding and debugging</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../next_steps/">Next steps</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Coding for Journalists</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Text encoding and debugging</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/ireapps/coding-for-journalists/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h4 id="encoding-and-debugging">Encoding and debugging</h4>
+<p>It's hard to succinctly describe why text encoding is a problem. Basically, it stems from the early days of computing when Western characters mattered. Others, not so much — they were barely an afterthought. </p>
+<p>By the way, the em-dash on the last sentence? That can be represented many different ways based on the encoding of the text.</p>
+<p>Different encodings translate the bits that underpin all manner of characters into what we actually see on screen. Many have the same for A through Z, 0 through 9 and basic punctuation, so you don't even know you have a problem.</p>
+<p>For more information, read this <a href="http://www.joelonsoftware.com/articles/Unicode.html">sweeping overview</a>.</p>
+<p>When it's a problem, the trick is to decode your input early into <a href="https://en.wikipedia.org/wiki/Unicode">unicode</a>, do whatever you need to do with your code, and then encode back into something like UTF8 when it's been written to a file.</p>
+<p>We encountered this a bit during our scrape at the beginning of the workshop. We had a few columns in the table with these other characters, and we were combining them with regular strings into individual lines that would be written to a CSV. We encoded them before they were written so they didn't break our script.</p>
+<p>Files to use:</p>
+<ul>
+<li>
+<p><strong>encoding.py</strong>: A script where we're trying to read a text file, print the lines to the screen and then write the output to another text file. It's not working out so well.</p>
+</li>
+<li>
+<p><strong>broken_code.png</strong>: Flow chart for common errors in Python, what they mean and what else you can check when things aren't working out exactly as you expect them to.</p>
+</li>
+<li>
+<p><strong>some_text.txt</strong>: A simple text file, encoded in Windows-1252, known by <a href="https://docs.python.org/2/library/codecs.html#standard-encodings">Python as 'cp1252.'</a></p>
+</li>
+</ul>
+<p>As always, a working version of the script is in <strong>completed</strong>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../next_steps/" class="btn btn-neutral float-right" title="Next steps"/>Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../pt9/" class="btn btn-neutral" title="Other scrapes"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>©2015, <a href="http://www.ire.org">Investigative Reporters & Editors, Inc.</a></p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../pt9/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../next_steps/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
